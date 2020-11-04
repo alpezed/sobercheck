@@ -1,0 +1,17 @@
+.navbar-nav-main {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+        display: flex !important;
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}

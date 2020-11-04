@@ -1,0 +1,50 @@
+.form-navbar {
+    position: relative;
+
+    .form-control {
+        border-color: #EDF0F5;
+        padding-left: 30px;
+        height: 35px;
+        transition: 250ms;
+        box-shadow: none;
+    
+        @include media-breakpoint-up(lg) {
+            position: relative;
+            z-index: 10;
+            border-color: transparent !important;
+            width: 30px;
+            background: transparent !important;
+            padding-right: 0;
+    
+            &:focus {
+                width: 260px;
+                padding-right: 0.75rem;
+            }
+        }
+    }
+    
+    svg {
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #cccccc;
+
+        @include media-breakpoint-up(lg) {
+            z-index: 1;
+        }
+    }
+}
+
+.sc-search {
+    .form-control {
+        padding: 1.5rem 2rem;
+        min-height: 64px;
+        font-size: 20px;
+    }
+
+    svg {
+        right: 2rem;
+        left: auto;
+    }
+}

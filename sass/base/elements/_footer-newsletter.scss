@@ -1,0 +1,27 @@
+.sobercheck-newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    button {
+        background: $black;
+        border: 0;
+        border-radius: 200%;
+        width: 31px;
+        height: 31px;
+        line-height: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    input[type="email"] {
+        background: $color__background-input;
+        border: 0;
+        padding: 8px 17px;
+        font-size: 14px;
+        flex: 1;
+        margin-right: 8px;
+        min-height: 42px;
+    }
+}

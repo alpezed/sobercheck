@@ -1,0 +1,30 @@
+.site-footer__info {
+    background-color: $color_background-secondary;
+    color: $white;
+    font-size: 15px;
+    padding: 16px 0;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .nav-social {
+        height: 100%;
+    }
+}
+
+.site-footer__widgets {
+    padding: 68px 0 30px;
+}
+
+@media ( max-width: 991px ) {
+    .copyright {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .copyright img {
+        margin-right: 10px;
+    }
+}

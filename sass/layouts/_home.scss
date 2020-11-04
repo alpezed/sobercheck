@@ -1,0 +1,56 @@
+@media ( max-width: 575px ) {
+    .section-main-title {
+        font-size: 25px;
+        line-height: 35px !important;
+    }
+    
+    .main-section {
+        .vc_empty_space {
+            height: 123px !important;
+        }
+
+        p {
+            font-size: 14px;
+            padding-bottom: 45px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+        }
+    }
+
+    // Overview section
+    body .section-overview {
+        padding-top: 15px !important;
+        padding-bottom: 40px !important;
+    }
+
+    // Services section
+    body .section-services {
+        padding-top: 25px !important;
+        padding-bottom: 30px !important;
+    }
+
+    // Video section
+    body .section-video {
+        background: none !important;
+        padding: 0 !important;
+
+        .vc_column-inner {
+            padding-top: 0 !important;
+        }
+
+        .wpb_video_widget.vc_video-align-center .wpb_wrapper {
+            width: 100% !important;
+        } 
+    }
+
+    // CTA section
+    body .section-cta {
+        h3 {
+            font-size: 23px;
+            line-height: 33px !important;
+        }
+    }
+}

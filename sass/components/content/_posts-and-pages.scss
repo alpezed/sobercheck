@@ -1,0 +1,45 @@
+.sticky {
+	display: block;
+}
+
+// .post,
+// .page {
+// 	#primary {
+// 		padding: 124px 0 100px 0;
+// 	}
+// }
+
+#primary {
+	padding: 124px 0 100px 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.entry-title {
+	font-size: 30px;
+}
+
+.container-fluid {
+    padding: 0 60px;
+}
+
+.container,
+.container-fluid {
+	@media ( max-width: 991px ) {
+		padding-right: 35px;
+		padding-left: 35px;
+	}
+}

@@ -1,0 +1,28 @@
+.sc-quote {
+    text-align: center;
+
+    blockquote {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 35px;
+        color: $color_accent-gray;
+        padding-bottom: 35px;
+        margin: 0 0 26px;
+        position: relative;
+
+        &::after {
+            content: '';
+            background: $primary;
+            position: absolute;
+            width: 162px;
+            height: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    cite {
+        font-style: normal;
+    }
+}

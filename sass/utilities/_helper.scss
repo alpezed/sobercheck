@@ -1,0 +1,26 @@
+@include media-breakpoint-down(sm) {
+    .full-width-sm {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+
+.title-bullet {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: -26px;
+        background: $primary url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5.641' height='9.866' viewBox='0 0 5.641 9.866'%3E%3Cpath d='M15.187,11.127,11.454,7.4a.7.7,0,0,1,0-1,.711.711,0,0,1,1,0l4.23,4.227a.7.7,0,0,1,.021.972l-4.247,4.256a.705.705,0,1,1-1-1Z' transform='translate(-11.246 -6.196)' fill='%23fff'/%3E%3C/svg%3E") no-repeat center;
+        width: 19px;
+        height: 19px;
+        border-radius: 100%;
+    }
+
+}

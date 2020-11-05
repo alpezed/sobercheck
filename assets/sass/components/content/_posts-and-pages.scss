@@ -2,13 +2,6 @@
 	display: block;
 }
 
-// .post,
-// .page {
-// 	#primary {
-// 		padding: 124px 0 100px 0;
-// 	}
-// }
-
 #primary {
 	padding: 124px 0 100px 0;
 }
@@ -28,7 +21,8 @@
 	margin: 0 0 1.5em;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
 	font-size: 30px;
 }
 
@@ -41,5 +35,55 @@
 	@media ( max-width: 991px ) {
 		padding-right: 35px;
 		padding-left: 35px;
+	}
+}
+
+.posted-on {
+    font-size: 20px;
+    line-height: 32px;
+    display: inline-block;
+    width: 61px;
+	background: transparent;
+	
+	&.light .entry-date {
+		color: $white;
+	}
+	
+	.entry-date {
+		text-align: center;
+
+		& > span {
+			display: block;
+		}
+
+		.day {
+			font-weight: bold;
+		}
+	}
+}
+
+.posted-by {
+    margin-top: 15px;
+    display: block;
+    padding-left: 15px;
+	font-weight: bold;
+	
+	a {
+		color: $black;
+	}
+}
+
+.entry-content {
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+	}
+	
+	ul li:before {
+		/* Unicode bullet symbol */
+		content: '\25AA';
+		/* Bullet color */
+		color: $primary;
+		padding-right: 0.5em;
 	}
 }

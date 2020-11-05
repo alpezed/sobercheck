@@ -1,0 +1,47 @@
+.blog-header-title {
+    margin-bottom: 77px;
+}
+
+.sc-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 70px;
+
+    .posted-on {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        color: $white;
+    }
+
+    .post-thumbnail {
+        position: relative;
+        display: block;
+        margin-bottom: 32px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .entry-title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 25px;
+
+        a {
+            color: $color_accent-gray;
+        }
+    }
+
+    .entry-content {
+        margin-top: 15px;
+    }
+}
+
+.sc-posts__read-more, .btn-link {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

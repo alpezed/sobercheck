@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @package Sober_Check
  */
-class Sidebars {
+class Hooks {
     use Singleton;
 
     public function __construct() {
@@ -20,6 +20,18 @@ class Sidebars {
     public function hooks() {
         add_action( 'body_class', array( $this, 'body_classes' ) );
         add_action( 'pingback_header', array( $this, 'pingback_header' ) );
+        add_action( 'sc_back_button', array( $this, 'back_button' ) );
+        add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+    }
+
+    public function back_button() {
+        if ( wp_get_referer() ) {
+            echo '<button class="btn btn-link px-0 py-0" onclick="javascript:history.back()">' . esc_html__( 'Back', 'sobercheck' ) . '</button>';
+        }
+    }
+
+    public function excerpt_length() {
+        return 13;
     }
 
     /**

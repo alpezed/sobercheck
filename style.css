@@ -7300,6 +7300,68 @@ textarea {
 	}
 }
 
+/* Blog
+--------------------------------------------- */
+.blog-header-title {
+	margin-bottom: 77px;
+}
+
+.sc-posts {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 70px;
+}
+
+.sc-posts .posted-on {
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	color: #fff;
+}
+
+.sc-posts .post-thumbnail {
+	position: relative;
+	display: block;
+	margin-bottom: 32px;
+}
+
+.sc-posts .post-thumbnail img {
+	width: 100%;
+}
+
+.sc-posts .entry-title {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.sc-posts .entry-title a {
+	color: #343434;
+}
+
+.sc-posts .entry-content {
+	margin-top: 15px;
+}
+
+.sc-posts__read-more, .btn-link {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.single-post .entry-title {
+	margin-bottom: 27px;
+}
+
+.single-post .entry-content {
+	margin-top: 50px;
+}
+
+.single-post .post-thumbnail {
+	margin-top: 27px;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -7420,7 +7482,8 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
 	font-size: 30px;
 }
 
@@ -7443,6 +7506,54 @@ textarea {
 		padding-right: 35px;
 		padding-left: 35px;
 	}
+}
+
+.posted-on {
+	font-size: 20px;
+	line-height: 32px;
+	display: inline-block;
+	width: 61px;
+	background: transparent;
+}
+
+.posted-on.light .entry-date {
+	color: #fff;
+}
+
+.posted-on .entry-date {
+	text-align: center;
+}
+
+.posted-on .entry-date > span {
+	display: block;
+}
+
+.posted-on .entry-date .day {
+	font-weight: bold;
+}
+
+.posted-by {
+	margin-top: 15px;
+	display: block;
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+.posted-by a {
+	color: #000;
+}
+
+.entry-content ul {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.entry-content ul li:before {
+	/* Unicode bullet symbol */
+	content: '\25AA';
+	/* Bullet color */
+	color: #1D8CBE;
+	padding-right: 0.5em;
 }
 
 /* Comments

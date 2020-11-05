@@ -14,6 +14,7 @@ class SoberCheck_Theme {
     public function __construct() {
 		Assets::get_instance();
 		Sidebars::get_instance();
+		Hooks::get_instance();
 		
 		if ( class_exists( 'WooCommerce' ) ) {
 			Woocommerce::get_instance();
@@ -142,5 +143,12 @@ class SoberCheck_Theme {
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
+
+		/**
+		 * Add custom image size
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/add_image_size/
+		 */
+		add_image_size( 'sc-blog-thumb', 350, 215, true );
     }
 }

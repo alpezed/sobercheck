@@ -1,6 +1,6 @@
 <header id="masthead" class="site-header header-02">
 	<nav id="header" class="navbar navbar-expand-lg navbar-light py-0">
-		<div class="container-fluid">
+		<div class="container-fluid align-items-end">
 			<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php
 				if ( has_custom_logo() ) {
@@ -29,12 +29,12 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="d-none d-lg-flex navbar-nav-main">
+			<div class="d-none d-lg-flex navbar-nav-main sobercheck-main-nav">
 				<?php
 					/** Loading WordPress Custom Menu (theme_location) **/
 					wp_nav_menu(
 						[
-							'theme_location' => 'primary-menu',
+							'theme_location' => 'main-menu',
 							'container'      => '',
 							'menu_class'     => 'navbar-nav ml-4 ml-auto',
 							'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
@@ -46,7 +46,7 @@
 		</div><!-- /.container -->
 	</nav><!-- /#header -->
 
-	<nav id="header" class="navbar navbar-expand-lg navbar-light bg-secondary shadow py-0 d-none d-lg-flex">
+	<nav id="secondary-header" class="navbar navbar-expand-lg navbar-light site-header__nav-below shadow py-0 d-none d-lg-flex">
 		<div class="container-fluid">
 			<h3 class="navbar-nav-phone">0800 700 777</h3>
 

@@ -56,6 +56,7 @@ class SoberCheck_Theme {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
+				'main-menu'	 => esc_html__( 'Main Menu', 'sobercheck' ),
 				'primary-menu'	 => esc_html__( 'Primary Menu', 'sobercheck' ),
 				'secondary-menu' => esc_html__( 'Secondary Menu', 'sobercheck' ),
 			)

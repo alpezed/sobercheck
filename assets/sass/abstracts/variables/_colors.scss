@@ -1,4 +1,17 @@
-$primary: #1D8CBE;
+// Color accent
+$accent_color_01: #1D8CBE;
+$accent_color_02: #FF9226;
+$accent_color_03: #1DBF8D;
+$accent_color_04: #93629F;
+
+$accent_colors: (
+  accent-01: $accent_color_01,
+  accent-02: $accent_color_02,
+  accent-03: $accent_color_03,
+  accent-04: $accent_color_04,
+);
+
+$primary: $accent_color_01;
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -25,6 +38,7 @@ $color__border-abbr: #666;
 $color_background-secondary: #434343;
 $color_heading-color: #141414;
 $color_accent-gray: #343434;
+$color_bg_secondary_nav: #EDEDED;
 
 $black: #000;
 $box-shadow: 0 5px 10px rgba($black, .16) !default;

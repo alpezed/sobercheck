@@ -105,6 +105,6 @@ function sobercheck_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function sobercheck_customize_preview_js() {
-	wp_enqueue_script( 'sobercheck-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), SOBER_CHECK_VERSION, true );
+	wp_enqueue_script( 'sobercheck-customizer', SOBER_CHECK_DIR_URI . '/js/customizer.js', array( 'customize-preview' ), SOBER_CHECK_VERSION, true );
 }
 add_action( 'customize_preview_init', 'sobercheck_customize_preview_js' );

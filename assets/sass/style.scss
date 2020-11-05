@@ -63,18 +63,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Bootstrap
 --------------------------------------------- */
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
-@import "../node_modules/bootstrap/scss/navbar";
-@import "../node_modules/bootstrap/scss/utilities";
-@import "../node_modules/bootstrap/scss/transitions";
-@import "../node_modules/bootstrap/scss/buttons";
-@import "../node_modules/bootstrap/scss/forms";
-@import "../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/grid";
 
 /* Box sizing
 --------------------------------------------- */
@@ -88,14 +88,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
-@import "layouts/top-bar";
-@import "layouts/header";
-@import "layouts/navbar";
-@import "layouts/footer";
-@import "layouts/overlay";
-@import "layouts/home";
+@import "layouts/layouts";
 
 /*--------------------------------------------------------------
 # Components

@@ -26,8 +26,10 @@ class Assets {
 
         wp_style_add_data( 'sobercheck-style', 'rtl', 'replace' );
 
-        wp_enqueue_script( 'sobercheck-navigation', SOBER_CHECK_ASSETS_URI . '/js/navigation.js', array(), SOBER_CHECK_VERSION, true );
+        // wp_enqueue_script( 'sobercheck-navigation', SOBER_CHECK_ASSETS_URI . '/js/navigation.js', array(), SOBER_CHECK_VERSION, true );
         wp_enqueue_script( 'bootstrap', SOBER_CHECK_ASSETS_URI . '/js/bootstrap.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
+
+        wp_enqueue_script( 'sobercheck-bundle', SOBER_CHECK_ASSETS_URI . '/js/bundle.js', array(), SOBER_CHECK_VERSION, true );
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );

@@ -37,8 +37,8 @@ class Sidebars {
         /**
          * Generate footer widgets
          */
-        $footer_map = array( 'One', 'Two', 'Three' );
-        for ( $i = 1; $i <= 3; $i++ ) { 
+        $footer_map = array( 'One', 'Two', 'Three', 'Four', 'Five' );
+        for ( $i = 1; $i <= 5; $i++ ) { 
             register_sidebar(
                 array(
                     'name'          => sprintf( __( 'Footer %1$s', 'sobercheck' ), $footer_map[ $i - 1 ] ),

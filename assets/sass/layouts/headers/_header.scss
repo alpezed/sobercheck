@@ -1,4 +1,23 @@
+.admin-bar .site-header .fixed-top {
+    @include media-breakpoint-up(sm) {
+        top: 32px;
+    }
+}
+
 .site-header {
+    &.headroom--not-top {
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-nav:not(.nav-menu-right) {
+            .nav-link {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
     .navbar-nav {
         .nav-item {
             position: relative;

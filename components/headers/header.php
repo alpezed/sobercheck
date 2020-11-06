@@ -1,11 +1,11 @@
-<header id="masthead" class="site-header">
-	<div class="site-header__topbar px-3 d-none d-lg-block">
-		<div class="container-fluid">
-			<div class="site-header__topbar--phone text-right"><?php echo get_theme_mod( 'phone_number', '0800 700 777' ); ?></div>
-		</div>
+<div class="site-header__topbar px-3 d-none d-lg-block">
+	<div class="container-fluid">
+		<div class="site-header__topbar--phone text-right"><?php echo get_theme_mod( 'phone_number', '0800 700 777' ); ?></div>
 	</div>
+</div>
 
-	<nav id="header" class="navbar navbar-expand-lg navbar-light shadow py-0">
+<header id="masthead" class="site-header header site-header--sticky">
+	<nav id="header" class="navbar navbar-expand-lg navbar-light shadow py-0 bg-white sticky-nav">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php

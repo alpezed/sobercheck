@@ -11,24 +11,13 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-footer__widgets">
+	<footer id="colophon" class="main-footer site-footer sc-footer-area">
+		<div class="footer-widgets">
 			<div class="container">
-				<div class="row">
-					<!-- Wodgets -->
-					<div class="col-12 col-lg-3 order-2 order-lg-1">
-						<?php dynamic_sidebar( 'footer-widget-1' ); ?>
-					</div>
-					<div class="col-12 col-lg-6 order-3 order-lg-2">
-						<?php dynamic_sidebar( 'footer-widget-2' ); ?>
-					</div>
-					<div class="col-12 col-lg-3 order-1 order-lg-3">
-						<?php dynamic_sidebar( 'footer-widget-3' ); ?>
-					</div>
-				</div>
+				<?php get_template_part( 'components/footers/footer' ); ?>
 			</div>
 		</div>
-		<div class="site-footer__info">
+		<div class="footer-info">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">

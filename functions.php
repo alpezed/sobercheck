@@ -55,3 +55,14 @@ require SOBER_CHECK_DIR_PATH . '/inc/customizer.php';
 // Custom Nav Walker: wp_bootstrap4_navwalker()
 require SOBER_CHECK_DIR_PATH . '/inc/wp_bootstrap_navwalker.php';
 require SOBER_CHECK_DIR_PATH . '/inc/wp_bootstrap_navwalker_footer.php';
+
+/**
+ * Lists of shortcode files
+ */
+foreach ( glob( SOBER_CHECK_DIR_PATH . '/inc/shortcodes/*.php' ) as $shortcode_file ) {
+	if ( ! file_exists( $shortcode_file ) ) {
+		continue;
+	}
+
+	require_once $shortcode_file;
+}

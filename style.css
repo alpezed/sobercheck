@@ -7565,7 +7565,6 @@ textarea {
 	display: none;
 }
 
-.page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
@@ -7637,12 +7636,14 @@ textarea {
 	color: #000;
 }
 
-.entry-content ul {
+.entry-content ul,
+.page-content ul {
 	padding-left: 0;
 	list-style-type: none;
 }
 
-.entry-content ul li:before {
+.entry-content ul li:before,
+.page-content ul li:before {
 	/* Unicode bullet symbol */
 	content: '\25AA';
 	/* Bullet color */
@@ -7906,6 +7907,10 @@ textarea {
 	background-color: #fff;
 }
 
+.sc-services-item > h5 {
+	margin-bottom: 20px !important;
+}
+
 .sc-cta {
 	display: flex;
 	align-items: center;
@@ -7939,6 +7944,7 @@ textarea {
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 0;
+	letter-spacing: -0.4px;
 }
 
 .sc-pdf-list__link {

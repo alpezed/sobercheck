@@ -1,4 +1,8 @@
 .sc-services-item {
-    padding: 37px 49px;
-    background-color: $white;
+  padding: 37px 49px;
+  background-color: $white;
+
+  & > h5 {
+    margin-bottom: 20px !important;
+  }
 }

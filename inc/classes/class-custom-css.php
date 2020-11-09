@@ -7,25 +7,27 @@ defined( 'ABSPATH' ) || exit();
 
 /**
  * Add color styling from theme
- * 
+ *
  * @package Sober_Check
  */
 class Custom_Css {
-    use Singleton;
+	use Singleton;
 
-    public function __construct() {
-        $this->hooks();
-    }
+	public function __construct() {
+		$this->hooks();
+	}
 
-    public function hooks() {
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-    }
+	public function hooks() {
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+	}
 
-    public function enqueue_scripts() {
-        $theme_color = sc_get_setting( 'theme_color' );
-        $custom_css = '';
-        if ( ! empty( $theme_color ) ) {
-            $custom_css .= "
+	public function enqueue_scripts() {
+		$content_padding_top    = \get_field( 'padding_top' );
+		$content_padding_bottom = \get_field( 'padding_bottom' );
+		$theme_color            = sc_get_setting( 'theme_color' );
+		$custom_css             = '';
+		if ( ! empty( $theme_color ) ) {
+			$custom_css .= "
                 ::selection {
                     color: #ffffff;
                     background-color: {$theme_color};
@@ -44,7 +46,24 @@ class Custom_Css {
                     color: {$theme_color} !important;
                 }
             ";
-        }
-        wp_add_inline_style( 'sobercheck-style', $custom_css );
-    }
+		}
+
+		if ( is_numeric( $content_padding_top ) ) {
+			$content_padding_top .= 'px';
+		}
+		if ( is_numeric( $content_padding_bottom ) ) {
+			$content_padding_bottom .= 'px';
+		}
+
+		$content_padding  = ! empty( $content_padding_top ) ? "padding-top: $content_padding_top !important;" : '';
+		$content_padding .= ! empty( $content_padding_bottom ) ? "padding-bottom: $content_padding_bottom !important;" : '';
+
+		if ( ! empty( $content_padding_top ) ) {
+			$custom_css .= "
+                .site-main { $content_padding }
+            ";
+		}
+
+		wp_add_inline_style( 'sobercheck-style', html_entity_decode( $custom_css, ENT_QUOTES ) );
+	}
 }

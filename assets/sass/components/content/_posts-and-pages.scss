@@ -1,89 +1,89 @@
 .sticky {
-	display: block;
+  display: block;
 }
 
 #primary {
-	padding: 124px 0 100px 0;
+  padding: 124px 0 100px 0;
 }
 
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
-.page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 .entry-title,
 .page-title {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 .container-fluid {
-    padding: 0 60px;
+  padding: 0 60px;
 }
 
 .container,
 .container-fluid {
-	@media ( max-width: 991px ) {
-		padding-right: 35px;
-		padding-left: 35px;
-	}
+  @media (max-width: 991px) {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
 }
 
 .posted-on {
-    font-size: 20px;
-    line-height: 32px;
-    display: inline-block;
-    width: 61px;
-	background: transparent;
-	
-	&.light .entry-date {
-		color: $white;
-	}
-	
-	.entry-date {
-		text-align: center;
+  font-size: 20px;
+  line-height: 32px;
+  display: inline-block;
+  width: 61px;
+  background: transparent;
 
-		& > span {
-			display: block;
-		}
+  &.light .entry-date {
+    color: $white;
+  }
 
-		.day {
-			font-weight: bold;
-		}
-	}
+  .entry-date {
+    text-align: center;
+
+    & > span {
+      display: block;
+    }
+
+    .day {
+      font-weight: bold;
+    }
+  }
 }
 
 .posted-by {
-    margin-top: 15px;
-    display: block;
-    padding-left: 15px;
-	font-weight: bold;
-	
-	a {
-		color: $black;
-	}
+  margin-top: 15px;
+  display: block;
+  padding-left: 15px;
+  font-weight: bold;
+
+  a {
+    color: $black;
+  }
 }
 
-.entry-content {
-	ul {
-		padding-left: 0;
-		list-style-type: none;
-	}
-	
-	ul li:before {
-		/* Unicode bullet symbol */
-		content: '\25AA';
-		/* Bullet color */
-		color: $primary;
-		padding-right: 0.5em;
-	}
+.entry-content,
+.page-content {
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  ul li:before {
+    /* Unicode bullet symbol */
+    content: '\25AA';
+    /* Bullet color */
+    color: $primary;
+    padding-right: 0.5em;
+  }
 }

@@ -9,3 +9,19 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin transit {
+	transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+@mixin transit2 {
+	transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+%transit {
+	@include transit();
+}
+
+%transit2 {
+	@include transit2();
+}

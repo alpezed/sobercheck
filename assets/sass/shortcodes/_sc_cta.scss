@@ -1,0 +1,14 @@
+.sc-cta {
+    display: flex;
+    align-items: center;
+
+    & > h2 {
+        margin-right: 16px;
+        line-height: 46px;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 10px 29px;
+    }
+}

@@ -30,14 +30,22 @@
 		padding-bottom: 14px;
 	}
 
+	&:hover, &:focus, &:active {
+		box-shadow: none;
+	}
+
 	&-wide {
 		padding-left: 33px;
 		padding-right: 33px;
 	}
 
-	&.btn-primary {
+	&-primary {
 		&.btn-download::after {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.18' height='14.18' viewBox='0 0 14.18 14.18'%3E%3Cg transform='translate(-4 -4)'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M17.68,22.5v2.929a1.464,1.464,0,0,1-1.464,1.464H5.964A1.464,1.464,0,0,1,4.5,25.429V22.5' transform='translate(0 -9.213)' /%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M10.5,15l3.661,3.661L17.822,15' transform='translate(-3.071 -5.374)' /%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M18,13.287V4.5' transform='translate(-6.91 0)' /%3E%3C/g%3E%3C/svg%3E");
+		}
+
+		&:not(:disabled):not(.disabled):active:focus, &:not(:disabled):not(.disabled).active:focus, .show > &.dropdown-toggle:focus {
+			box-shadow: none;
 		}
 	}
 }

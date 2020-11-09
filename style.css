@@ -48,6 +48,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+a, .site-header .navbar-nav:not(.nav-menu-right) .nav-link {
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -6691,8 +6695,8 @@ a:hover, a:focus, a:active {
 	color: rgba(29, 140, 190, 0.8);
 }
 
-a:focus {
-	outline: thin dotted;
+a[href^=tel] {
+	text-decoration: none;
 }
 
 a:hover, a:active {
@@ -6856,13 +6860,22 @@ select:-webkit-autofill {
 	}
 }
 
+.btn:hover, .btn:focus, .btn:active {
+	box-shadow: none;
+}
+
 .btn-wide {
 	padding-left: 33px;
 	padding-right: 33px;
 }
 
-.btn.btn-primary.btn-download::after {
+.btn-primary.btn-download::after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.18' height='14.18' viewBox='0 0 14.18 14.18'%3E%3Cg transform='translate(-4 -4)'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M17.68,22.5v2.929a1.464,1.464,0,0,1-1.464,1.464H5.964A1.464,1.464,0,0,1,4.5,25.429V22.5' transform='translate(0 -9.213)' /%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M10.5,15l3.661,3.661L17.822,15' transform='translate(-3.071 -5.374)' /%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' d='M18,13.287V4.5' transform='translate(-6.91 0)' /%3E%3C/g%3E%3C/svg%3E");
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+	box-shadow: none;
 }
 
 .btn-download::after {
@@ -7116,7 +7129,6 @@ textarea {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	transition: all 200ms ease-in-out;
 }
 
 @media (max-width: 1199px) {
@@ -7131,6 +7143,7 @@ textarea {
 
 @media (min-width: 992px) {
 	.site-header .navbar-nav:not(.nav-menu-right) .nav-link::before {
+		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 		content: '';
 		position: absolute;
 		width: 100%;
@@ -7138,7 +7151,6 @@ textarea {
 		bottom: 0;
 		left: 0;
 		background-color: #1D8CBE;
-		transition: transform 250ms;
 		transform: translateX(-50%) scaleX(0);
 	}
 }
@@ -7287,6 +7299,30 @@ textarea {
 
 .footer-info .nav-social {
 	height: 100%;
+}
+
+.sc-footer-cta {
+	color: #fff;
+	padding: 81px 0;
+	text-align: center;
+}
+
+.sc-footer-cta h3 {
+	color: #fff;
+	line-height: 46px;
+	margin-bottom: 25px;
+}
+
+@media (max-width: 767.98px) {
+	.sc-footer-cta h3 {
+		font-size: 23px;
+		line-height: 33px;
+	}
+}
+
+.sc-footer-cta .btn {
+	font-size: 14px;
+	padding: 10px 28px;
 }
 
 .footer-widgets {
@@ -7863,9 +7899,52 @@ textarea {
 
 /* Shortcode
 --------------------------------------------- */
+/* Shortcodes
+--------------------------------------------- */
 .sc-services-item {
 	padding: 37px 49px;
 	background-color: #fff;
+}
+
+.sc-cta {
+	display: flex;
+	align-items: center;
+}
+
+.sc-cta > h2 {
+	margin-right: 16px;
+	line-height: 46px;
+}
+
+.sc-cta .btn {
+	font-size: 14px;
+	padding: 10px 29px;
+}
+
+.sc-pdf-list {
+	background: #fff;
+	border: 1px solid #707070;
+	border-radius: 5px;
+	padding: 15px 21px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 402px;
+	max-width: 100%;
+	margin-bottom: 8px;
+	margin-right: 3px;
+}
+
+.sc-pdf-list h4 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.sc-pdf-list__link {
+	padding-left: 20px;
+	font-size: 14px;
+	text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

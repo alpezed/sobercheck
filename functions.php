@@ -29,13 +29,11 @@ if ( ! defined( 'SOBER_CHECK_ASSETS_URI' ) ) {
 
 require SOBER_CHECK_DIR_PATH . '/inc/autoloader.php';
 
+
 /**
- * Theme initialization
+ * Customizer additions.
  */
-function sobercheck_init() {
-	\Sobercheck\Inc\SoberCheck_Theme::get_instance();
-}
-sobercheck_init();
+require SOBER_CHECK_DIR_PATH . '/inc/customizer.php';
 
 /**
  * Custom template tags for this theme.
@@ -47,14 +45,11 @@ require SOBER_CHECK_DIR_PATH . '/inc/template-tags.php';
  */
 require SOBER_CHECK_DIR_PATH . '/inc/functions.php';
 
-/**
- * Customizer additions.
- */
-require SOBER_CHECK_DIR_PATH . '/inc/customizer.php';
-
 // Custom Nav Walker: wp_bootstrap4_navwalker()
-require SOBER_CHECK_DIR_PATH . '/inc/wp_bootstrap_navwalker.php';
-require SOBER_CHECK_DIR_PATH . '/inc/wp_bootstrap_navwalker_footer.php';
+require SOBER_CHECK_DIR_PATH . '/inc/wp-bootstrap-navwalker.php';
+
+// Kirki installer
+require SOBER_CHECK_DIR_PATH . '/inc/classes/class-kirki-installer-section.php';
 
 /**
  * Lists of shortcode files
@@ -66,3 +61,11 @@ foreach ( glob( SOBER_CHECK_DIR_PATH . '/inc/shortcodes/*.php' ) as $shortcode_f
 
 	require_once $shortcode_file;
 }
+
+/**
+ * Theme initialization
+ */
+function sobercheck_init() {
+	\Sobercheck\Inc\SoberCheck_Theme::get_instance();
+}
+sobercheck_init();

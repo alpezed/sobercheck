@@ -9,23 +9,65 @@ defined( 'ABSPATH' ) || exit;
  * Initial setup
  */
 class SoberCheck_Theme {
-    use Singleton;
-
+	use Singleton;
+		
+	/**
+	 * Accent Colors
+	 *
+	 * @var array
+	 */
+	public $accent_colors = array();
+    
+    /**
+     * The constructor
+     *
+     * @return void
+     */
     public function __construct() {
 		Assets::get_instance();
 		Sidebars::get_instance();
 		Hooks::get_instance();
+		Custom_Css::get_instance();
+		Kirki::get_instance();
 		
 		if ( class_exists( 'WooCommerce' ) ) {
 			Woocommerce::get_instance();
 		}
+
+		$this->accent_colors = array(
+			'#1D8CBE',
+			'#FF9226',
+			'#1DBF8D',
+			'#93629F',
+		);
+		// $this->get_accent_colors();
 
         $this->init();
     }
 
     public function init() {
         add_action( 'after_setup_theme', array( $this, 'setup' ) );
-    }
+	}
+	
+	public function get_accent_colors() {
+		if ( ! empty( sc_get_setting( 'color_scheme_1' ) ) ) {
+			$this->accent_colors[0] = \sc_get_setting( 'color_scheme_1' );
+		}
+
+		if ( ! empty( sc_get_setting( 'color_scheme_2' ) ) ) {
+			$this->accent_colors[1] = \sc_get_setting( 'color_scheme_2' );
+		}
+
+		if ( ! empty( sc_get_setting( 'color_scheme_3' ) ) ) {
+			$this->accent_colors[2] = \sc_get_setting( 'color_scheme_3' );
+		}
+
+		if ( ! empty( sc_get_setting( 'color_scheme_4' ) ) ) {
+			$this->accent_colors[3] = \sc_get_setting( 'color_scheme_4' );
+		}
+
+		return $this->accent_colors;
+	}
 
     public function setup() {
         /*

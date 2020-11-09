@@ -35,11 +35,11 @@
         
         &:not(.nav-menu-right) {
             .nav-link {
+                @extend %transit;
                 color: $black;
                 display: block;
                 padding-top: 30px;
                 padding-bottom: 30px;
-                transition: all 200ms ease-in-out;
 
                 @media ( max-width: 1199px ) {
                     padding: 15px;
@@ -53,6 +53,7 @@
     
                 @include media-breakpoint-up(lg) {
                     &::before {
+                        @include transit2();
                         content: '';
                         position: absolute;
                         width: 100%;
@@ -60,7 +61,6 @@
                         bottom: 0;
                         left: 0;
                         background-color: $primary;
-                        transition: transform 250ms;
                         transform: translateX(-50%) scaleX(0);
                     }
                 }

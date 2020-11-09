@@ -13,6 +13,28 @@
     }
 }
 
+.sc-footer-cta {
+    color: $white;
+    padding: 81px 0;
+    text-align: center;
+
+    h3 {
+        color: $white;
+        line-height: 46px;
+        margin-bottom: 25px;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 23px;
+            line-height: 33px;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 28px;
+    }
+}
+
 .footer-widgets {
     padding: 68px 0 30px;
 }

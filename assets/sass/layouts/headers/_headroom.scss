@@ -25,6 +25,10 @@
         right: 0;
         left: 0;
         top: 0;
+
+        @include media-breakpoint-down(sm) {
+            box-shadow: 0 5px 10px rgba($black, .16);
+        }
     }
 }
 

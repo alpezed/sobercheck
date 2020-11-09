@@ -5,6 +5,8 @@
 }
 
 .site-header {
+    background-color: $white;
+    
     &.headroom--not-top {
         .navbar-brand {
             padding: 0;
@@ -103,5 +105,11 @@
         margin-top: 2.5em;
         margin-bottom: 1em;
         font-weight: bold;
+    }
+
+    .sc-mobile-menu {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
     }
 }

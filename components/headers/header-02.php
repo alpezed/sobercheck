@@ -1,6 +1,6 @@
-<header id="masthead" class="site-header header-02">
+<header id="masthead" class="site-header header-02 site-header--sticky">
 	<nav id="header" class="navbar navbar-expand-lg navbar-light py-0">
-		<div class="container-fluid align-items-end">
+		<div class="container-fluid align-items-sm-end">
 			<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php
 				if ( has_custom_logo() ) {
@@ -33,13 +33,13 @@
 				<?php
 					/** Loading WordPress Custom Menu (theme_location) **/
 					wp_nav_menu(
-						[
+						array(
 							'theme_location' => 'main-menu',
 							'container'      => '',
 							'menu_class'     => 'navbar-nav ml-4 ml-auto',
 							'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'         => new WP_Bootstrap_Navwalker(),
-						]
+						)
 					);
 					?>
 			</div><!-- /.navbar-collapse -->
@@ -48,7 +48,7 @@
 
 	<nav id="secondary-header" class="navbar navbar-expand-lg navbar-light site-header__nav-below shadow py-0 d-none d-lg-flex">
 		<div class="container-fluid">
-			<h3 class="navbar-nav-phone">0800 700 777</h3>
+			<h3 class="navbar-nav-phone"><?php echo sc_get_setting( 'phone_number' ); ?></h3>
 
 			<div class="navbar-nav-main">
 				<ul class="nav navbar-nav nav-menu-right align-items-center order-2 mr-2">
@@ -72,13 +72,13 @@
 				<?php
 					/** Loading WordPress Custom Menu (theme_location) **/
 					wp_nav_menu(
-						[
+						array(
 							'theme_location' => 'primary-menu',
 							'container'      => '',
 							'menu_class'     => 'navbar-nav ml-4 mr-auto order-1',
 							'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'         => new WP_Bootstrap_Navwalker(),
-						]
+						)
 					);
 					?>
 			</div><!-- /.navbar-collapse -->
@@ -92,19 +92,30 @@
 		<input class="form-control" name="s" type="text" placeholder="Search">
 	</form>
 
-	<div id="navbar" class="collapse navbar-collapse">
+	<div id="navbar" class="collapse navbar-collapse sc-mobile-menu">
 		<?php
-			/** Loading WordPress Custom Menu (theme_location) **/
-			wp_nav_menu(
-				[
-					'theme_location' => 'primary-menu',
-					'container'      => '',
-					'menu_class'     => 'navbar-nav',
-					'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
-					'walker'         => new WP_Bootstrap_Navwalker(),
-				]
-			);
+			if ( has_nav_menu( 'mobile-menu' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'mobile-menu',
+						'container'      => '',
+						'menu_class'     => 'navbar-nav',
+						'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'         => new WP_Bootstrap_Navwalker(),
+					)
+				);
+			} else {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary-menu',
+						'container'      => '',
+						'menu_class'     => 'navbar-nav',
+						'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'         => new WP_Bootstrap_Navwalker(),
+					)
+				);
+			}
 			?>
-		<h2 class="site-header__phone-mobile">0800 700 777</h2>
+		<h2 class="site-header__phone-mobile text-primary"><?php echo sc_get_setting( 'phone_number' ); ?></h2>
 	</div><!-- /.navbar-collapse -->
 </header><!-- #masthead -->

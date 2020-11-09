@@ -586,16 +586,16 @@ var Header = /*#__PURE__*/function () {
     value: function render() {
       // grab an element
       var navElement = document.querySelector('.site-header--sticky');
-      var pageContent = document.querySelector('.site-header--sticky + .site-main'); // construct an instance of Headroom, passing the element
+      var pageContent = document.querySelector('.site-header--sticky + .site-main');
+      var topBar = document.querySelector('.site-header__topbar'); // construct an instance of Headroom, passing the element
 
       var headroom = new _headroom.default(navElement, {
-        offset: document.querySelector('.site-header__topbar').offsetHeight,
+        offset: topBar ? topBar.offsetHeight : 0,
         tolerance: 5,
         onTop: function onTop() {
           pageContent.style.marginTop = '';
         },
         onNotTop: function onNotTop() {
-          console.log(navElement.offsetHeight);
           pageContent.style.marginTop = navElement.offsetHeight + 'px';
         }
       }); // initialise
@@ -640,7 +640,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56061" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

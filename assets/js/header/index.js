@@ -12,17 +12,17 @@ class Header {
 	render() {
 		// grab an element
         const navElement = document.querySelector( '.site-header--sticky' );
-        const pageContent = document.querySelector( '.site-header--sticky + .site-main' );
+		const pageContent = document.querySelector( '.site-header--sticky + .site-main' );
+		const topBar = document.querySelector( '.site-header__topbar' );
 
 		// construct an instance of Headroom, passing the element
 		const headroom = new Headroom( navElement, {
-			offset: document.querySelector( '.site-header__topbar' ).offsetHeight,
+			offset: topBar ? topBar.offsetHeight : 0,
             tolerance: 5,
             onTop : function() {
                 pageContent.style.marginTop  = '';
             },
             onNotTop: function() {
-                console.log(navElement.offsetHeight)
                 pageContent.style.marginTop  = navElement.offsetHeight + 'px';
             }
 		} );

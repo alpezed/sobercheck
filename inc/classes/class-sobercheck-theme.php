@@ -102,6 +102,7 @@ class SoberCheck_Theme {
 				'main-menu'	 => esc_html__( 'Main Menu', 'sobercheck' ),
 				'primary-menu'	 => esc_html__( 'Primary Menu', 'sobercheck' ),
 				'secondary-menu' => esc_html__( 'Secondary Menu', 'sobercheck' ),
+				'mobile-menu' => esc_html__( 'Mobile Menu', 'sobercheck' ),
 			)
 		);
 

@@ -9,6 +9,10 @@
  * @package Sober_Check
  */
 
+$header_style = sc_get_setting( 'header_style' );
+if ( ! empty( $header_style ) ) {
+	$header_style = get_field( 'header_style' );
+}
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -24,4 +28,4 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sobercheck' ); ?></a>
 
-	<?php get_template_part( 'components/headers/header', sc_get_setting( 'header_style' ) ); ?>
+	<?php get_template_part( 'components/headers/header', $header_style ); ?>

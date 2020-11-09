@@ -27,6 +27,7 @@ class Assets {
         wp_style_add_data( 'sobercheck-style', 'rtl', 'replace' );
 
         // wp_enqueue_script( 'sobercheck-navigation', SOBER_CHECK_ASSETS_URI . '/js/navigation.js', array(), SOBER_CHECK_VERSION, true );
+        wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
         wp_enqueue_script( 'bootstrap', SOBER_CHECK_ASSETS_URI . '/js/bootstrap.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
 
         wp_enqueue_script( 'sobercheck-bundle', SOBER_CHECK_ASSETS_URI . '/js/bundle.js', array(), SOBER_CHECK_VERSION, true );

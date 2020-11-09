@@ -1,6 +1,6 @@
 <div class="site-header__topbar px-3 d-none d-lg-block">
 	<div class="container-fluid">
-		<div class="site-header__topbar--phone text-right"><?php echo get_theme_mod( 'phone_number', '0800 700 777' ); ?></div>
+		<div class="site-header__topbar--phone text-right"><?php echo sc_get_setting( 'phone_number' ); ?></div>
 	</div>
 </div>
 
@@ -77,7 +77,7 @@
 		<input class="form-control" name="s" type="text" placeholder="Search">
 	</form>
 
-	<div id="navbar" class="collapse navbar-collapse">
+	<div id="navbar" class="collapse navbar-collapse sc-mobile-menu">
 		<?php
 			/** Loading WordPress Custom Menu (theme_location) **/
 			wp_nav_menu(
@@ -90,6 +90,6 @@
                 )
 			);
 			?>
-		<h2 class="site-header__phone-mobile"><?php echo get_theme_mod( 'phone_number', '0800 700 777' ); ?></h2>
+		<h2 class="site-header__phone-mobile"><?php echo sc_get_setting( 'phone_number' ); ?></h2>
 	</div><!-- /.navbar-collapse -->
 </header><!-- #masthead -->

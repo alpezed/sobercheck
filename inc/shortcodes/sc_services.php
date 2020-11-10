@@ -33,7 +33,7 @@ function sobercheck_services_item( $atts, $content = null ) {
         }
     </style>
     <?php endif; ?>
-    <div id="<?php echo esc_attr( $id ); ?>" class="sc-services-item text-left text-sm-center<?php echo ! empty( $style ) ? ' style-' . $style : ''; ?>">
+    <div id="<?php echo esc_attr( $id ); ?>" class="sc-services-item<?php echo ! empty( $style ) ? ' style-' . $style : ''; ?>">
         <?php
             switch ( $style ) {
                 case '01':

@@ -1,8 +1,22 @@
 .admin-bar {
     .site-header--sticky {
+        @include media-breakpoint-up(xs) {
+            top: 32px;
+        }
+
+        &.headroom--top {
+            @media only screen and (max-width: 768px) {
+                top: 46px;
+            }
+        }
+
         &.headroom--not-top {
-            @include media-breakpoint-up(sm) {
-                top: 32px;
+            @media only screen and (max-width: 768px) {
+                top: 46px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                top: 0;
             }
         }
     }
@@ -14,18 +28,18 @@
 }
 
 .site-header--sticky {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0;
+
     &.headroom--pinned,
     &.headroom--unpinned {
         transform: none;
     }
 
     &.headroom--not-top {
-        position: fixed;
-        z-index: 10;
-        right: 0;
-        left: 0;
-        top: 0;
-
         @include media-breakpoint-down(sm) {
             box-shadow: 0 5px 10px rgba($black, .16);
         }

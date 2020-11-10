@@ -1,0 +1,17 @@
+$primary: $accent_color_01;
+$black: #000;
+
+$box-shadow: 0 5px 10px rgba($black, .16) !default;
+
+$theme-colors: (
+  "primary": $primary
+);
+
+$sizes: (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    90: 90%,
+    100: 100%,
+    auto: auto
+);

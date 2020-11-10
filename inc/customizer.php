@@ -132,6 +132,7 @@ Kirki::add_field( 'theme', array(
 	'choices'     => array(
 		'01' => esc_html__( 'Style 01', 'sobercheck' ),
 		'02' => esc_html__( 'Style 02', 'sobercheck' ),
+		'03' => esc_html__( 'Style 03', 'sobercheck' ),
     ),
     'description' => esc_html__( 'Select Header Style.', 'sobercheck' ),
  ) );

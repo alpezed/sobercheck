@@ -11,8 +11,6 @@ $accent_colors: (
   accent-04: $accent_color_04,
 );
 
-$primary: $accent_color_01;
-
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -21,12 +19,12 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__background-input: #f3f3f3;
 
-$color__text-screen: $primary;
+$color__text-screen: $accent_color_01;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $primary; //royalblue
-$color__link-visited: $primary; //purple
-$color__link-hover: rgba($primary, .8); //midnightblue
+$color__link: $accent_color_01; //royalblue
+$color__link-visited: $accent_color_01; //purple
+$color__link-hover: rgba($accent_color_01, .8); //midnightblue
 $color__text-main: #616161;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -40,10 +38,3 @@ $color_heading-color: #141414;
 $color_accent-gray: #343434;
 $color_bg_secondary_nav: #EDEDED;
 $color_border_pdf_list: #707070;
-
-$black: #000;
-$box-shadow: 0 5px 10px rgba($black, .16) !default;
-
-$theme-colors: (
-  "primary": $primary
-);

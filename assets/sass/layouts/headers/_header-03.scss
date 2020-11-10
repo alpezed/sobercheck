@@ -1,0 +1,30 @@
+.site-header--header-03 {
+
+    .site-header--phone {
+        margin-left: auto;
+        font-size: size(16);
+        font-weight: 500;
+
+        a {
+            color: $white;
+            display: inline-block;
+            background-color: $black;
+            padding: size(11) size(26);
+        }
+    }
+        
+    .navbar {
+        @extend %transit;
+    }
+
+    &:not(.headroom--not-top) {
+        .site-header--phone {
+            font-size: size(20);
+        }
+
+        .navbar {
+            padding-top: size(20);
+            padding-bottom: size(20);
+        }
+    }
+}

@@ -24,15 +24,15 @@ class SoberCheck_Theme {
      * @return void
      */
     public function __construct() {
+		if ( class_exists( 'WooCommerce' ) ) {
+			Woocommerce::get_instance();
+		}
 		Assets::get_instance();
 		Sidebars::get_instance();
 		Hooks::get_instance();
 		Custom_Css::get_instance();
 		Kirki::get_instance();
-		
-		if ( class_exists( 'WooCommerce' ) ) {
-			Woocommerce::get_instance();
-		}
+		Custom_Post_Types::get_instance();
 
 		$this->accent_colors = array(
 			'#1D8CBE',
@@ -161,31 +161,6 @@ class SoberCheck_Theme {
          * @global int $content_width
          */
 		$GLOBALS['content_width'] = apply_filters( 'sobercheck_content_width', 640 );
-		
-		/**
-		 * WooCommerce setup function.
-		 *
-		 * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
-		 * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
-		 * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
-		 */
-		add_theme_support(
-			'woocommerce',
-			array(
-				'thumbnail_image_width' => 150,
-				'single_image_width'    => 300,
-				'product_grid'          => array(
-					'default_rows'    => 3,
-					'min_rows'        => 1,
-					'default_columns' => 4,
-					'min_columns'     => 1,
-					'max_columns'     => 6,
-				),
-			)
-		);
-		add_theme_support( 'wc-product-gallery-zoom' );
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
 
 		/**
 		 * Add custom image size
@@ -193,5 +168,6 @@ class SoberCheck_Theme {
 		 * @link https://developer.wordpress.org/reference/functions/add_image_size/
 		 */
 		add_image_size( 'sc-blog-thumb', 350, 215, true );
+		add_image_size( 'sc-team-thumb', 350, 400, true );
     }
 }

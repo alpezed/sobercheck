@@ -9,6 +9,7 @@
         padding-bottom: 35px;
         margin: 0 0 26px;
         position: relative;
+        letter-spacing: -0.75px;
 
         &::after {
             content: '';
@@ -19,6 +20,27 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+    }
+
+    &--lg {
+        blockquote {
+            font-size: size(30);
+            line-height: 50px;
+            padding: 0 35px 0 0;
+        }
+    }
+
+    &--left {
+        text-align: left;
+
+        blockquote::after {
+            width: 4px;
+            height: 100%;
+            left: auto;
+            right: 0;
+            top: 0;
+            bottom: auto;
         }
     }
 

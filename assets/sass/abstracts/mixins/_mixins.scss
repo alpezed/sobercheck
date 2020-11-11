@@ -52,3 +52,22 @@ $base-size: 16;
 		}
 	}
 }
+
+@include media-breakpoint-down(xs) {
+	%btn-mobile {
+		font-size: size(18) !important;
+		padding: 16px 53px !important;
+	}
+}
+
+%pagination-item {
+	@extend %transit3;
+	color: $white;
+	background-color: $primary;
+	width: size(31);
+	height: size(31);
+	text-align: center;
+	line-height: 28px;
+	display: block;
+	border-radius: 100%;
+}

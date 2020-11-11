@@ -8,12 +8,13 @@
  *
  * @package Sober_Check
  */
+global $post;
 
 $social_links = sc_get_setting( 'social_link' );
-$display_footer_widgets = get_field( 'hide_footer_widgets' );
+$display_footer_cta = get_field( 'hide_footer_cta' );
 ?>
-	<?php if ( ! $display_footer_widgets ) : ?>
-	<?php get_template_part( 'components/footer', 'cta' ); ?>
+	<?php if ( ! $display_footer_cta ) : ?>
+		<?php get_template_part( 'components/footer', 'cta' ); ?>
 	<?php endif; ?>
 	<footer id="colophon" class="main-footer site-footer sc-footer-area">
 		<div class="footer-widgets">

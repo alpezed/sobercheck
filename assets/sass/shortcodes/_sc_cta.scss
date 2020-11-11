@@ -2,13 +2,24 @@
     display: flex;
     align-items: center;
 
+    @include media-breakpoint-down(xs) {
+        flex-direction: column;
+    }
+
     & > h2 {
         margin-right: 16px;
         line-height: 46px;
+
+        @include media-breakpoint-down(xs) {
+            font-size: size(25);
+            margin-right: 0;
+            margin-bottom: 20px
+        }
     }
     
     .btn {
         font-size: 14px;
         padding: 10px 29px;
+        @extend %btn-mobile;
     }
 }

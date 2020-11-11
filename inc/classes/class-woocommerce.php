@@ -25,6 +25,7 @@ class Woocommerce {
     public function hooks() {
         add_filter( 'body_class', array( $this, 'active_body_class' ) );
         add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+        add_filter( 'woocommerce_pagination_args', array( $this, 'pagination_args' ) );
         /**
          * Disable the default WooCommerce stylesheet.
          *
@@ -41,12 +42,46 @@ class Woocommerce {
         remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
         remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+        remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+        remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+        remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
         add_action( 'woocommerce_before_main_content', array( $this, 'wrapper_before' ) );
         add_action( 'woocommerce_after_main_content', array( $this, 'wrapper_after' ) );
 
         add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'cart_link_fragment' ) );
 
         add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_scripts' ) );
+
+        
+		
+		/**
+		 * WooCommerce setup function.
+		 *
+		 * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+		 * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
+		 * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
+		 */
+		add_theme_support(
+			'woocommerce',
+			array(
+				'thumbnail_image_width' => 250,
+				'single_image_width'    => 515,
+				'product_grid'          => array(
+					'default_rows'    => 3,
+					'min_rows'        => 1,
+					'default_columns' => 4,
+					'min_columns'     => 1,
+					'max_columns'     => 6,
+				),
+			)
+		);
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
     }
 
     /**
@@ -110,6 +145,9 @@ class Woocommerce {
 	public function wrapper_before() {
 		?>
 			<main id="primary" class="site-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
 		<?php
     }
     
@@ -121,7 +159,10 @@ class Woocommerce {
 	 * @return void
 	 */
 	public function wrapper_after() {
-		?>
+        ?>
+                        </div>
+                    </div>
+                </div>
 			</main><!-- #main -->
 		<?php
 	}
@@ -135,7 +176,25 @@ class Woocommerce {
     public function related_products_args( $args ) {
         $defaults = array(
             'posts_per_page' => 3,
-            'columns'        => 3,
+            'columns'        => 4,
+        );
+    
+        $args = wp_parse_args( $defaults, $args );
+    
+        return $args;
+    }
+    
+    /**
+     * Pagination Products Args.
+     *
+     * @param array $args pagination args.
+     * @return array $args pagination args.
+     */
+    public function pagination_args( $args ) {
+        $defaults = array(
+            'prev_text' => __( '<div class="post-navigation__prev"><svg xmlns="http://www.w3.org/2000/svg" width="9.371" height="16.39" viewBox="0 0 9.371 16.39"><path fill="#fff" d="M14.071,14.388l6.2-6.2a1.166,1.166,0,0,0,0-1.654,1.181,1.181,0,0,0-1.659,0l-7.027,7.022a1.169,1.169,0,0,0-.034,1.615l7.056,7.071a1.171,1.171,0,0,0,1.659-1.654Z" transform="translate(-11.246 -6.196)"/></svg></div>', 'sobercheck' ),
+            'next_text' => __( '<div class="post-navigation__next"><svg xmlns="http://www.w3.org/2000/svg" width="9.371" height="16.39" viewBox="0 0 9.371 16.39"><path fill="#fff" d="M17.793,14.388l-6.2-6.2a1.166,1.166,0,0,1,0-1.654,1.181,1.181,0,0,1,1.659,0l7.027,7.022a1.169,1.169,0,0,1,.034,1.615l-7.056,7.071A1.171,1.171,0,1,1,11.6,20.59Z" transform="translate(-11.246 -6.196)"/></svg></div>', 'sobercheck' ),
+            'screen_reader_text' => __( 'Posts navigation', 'sobercheck' )
         );
     
         $args = wp_parse_args( $defaults, $args );

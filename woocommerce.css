@@ -3,6 +3,227 @@ Theme Name: Sober Check
 
 WooCommerce styles override
 */
+/* Bootstrap
+--------------------------------------------- */
+.woocommerce-pagination .page-numbers li a, .woocommerce-pagination .page-numbers li span {
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.w-25 {
+	width: 25% !important;
+}
+
+.w-50 {
+	width: 50% !important;
+}
+
+.w-75 {
+	width: 75% !important;
+}
+
+.w-90 {
+	width: 90% !important;
+}
+
+.w-100 {
+	width: 100% !important;
+}
+
+.w-auto {
+	width: auto !important;
+}
+
+.h-25 {
+	height: 25% !important;
+}
+
+.h-50 {
+	height: 50% !important;
+}
+
+.h-75 {
+	height: 75% !important;
+}
+
+.h-90 {
+	height: 90% !important;
+}
+
+.h-100 {
+	height: 100% !important;
+}
+
+.h-auto {
+	height: auto !important;
+}
+
+@media (min-width: 576px) {
+	.w-sm-25 {
+		width: 25% !important;
+	}
+	.w-sm-50 {
+		width: 50% !important;
+	}
+	.w-sm-75 {
+		width: 75% !important;
+	}
+	.w-sm-90 {
+		width: 90% !important;
+	}
+	.w-sm-100 {
+		width: 100% !important;
+	}
+	.w-sm-auto {
+		width: auto !important;
+	}
+	.h-sm-25 {
+		height: 25% !important;
+	}
+	.h-sm-50 {
+		height: 50% !important;
+	}
+	.h-sm-75 {
+		height: 75% !important;
+	}
+	.h-sm-90 {
+		height: 90% !important;
+	}
+	.h-sm-100 {
+		height: 100% !important;
+	}
+	.h-sm-auto {
+		height: auto !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.w-md-25 {
+		width: 25% !important;
+	}
+	.w-md-50 {
+		width: 50% !important;
+	}
+	.w-md-75 {
+		width: 75% !important;
+	}
+	.w-md-90 {
+		width: 90% !important;
+	}
+	.w-md-100 {
+		width: 100% !important;
+	}
+	.w-md-auto {
+		width: auto !important;
+	}
+	.h-md-25 {
+		height: 25% !important;
+	}
+	.h-md-50 {
+		height: 50% !important;
+	}
+	.h-md-75 {
+		height: 75% !important;
+	}
+	.h-md-90 {
+		height: 90% !important;
+	}
+	.h-md-100 {
+		height: 100% !important;
+	}
+	.h-md-auto {
+		height: auto !important;
+	}
+}
+
+@media (min-width: 992px) {
+	.w-lg-25 {
+		width: 25% !important;
+	}
+	.w-lg-50 {
+		width: 50% !important;
+	}
+	.w-lg-75 {
+		width: 75% !important;
+	}
+	.w-lg-90 {
+		width: 90% !important;
+	}
+	.w-lg-100 {
+		width: 100% !important;
+	}
+	.w-lg-auto {
+		width: auto !important;
+	}
+	.h-lg-25 {
+		height: 25% !important;
+	}
+	.h-lg-50 {
+		height: 50% !important;
+	}
+	.h-lg-75 {
+		height: 75% !important;
+	}
+	.h-lg-90 {
+		height: 90% !important;
+	}
+	.h-lg-100 {
+		height: 100% !important;
+	}
+	.h-lg-auto {
+		height: auto !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	.w-xl-25 {
+		width: 25% !important;
+	}
+	.w-xl-50 {
+		width: 50% !important;
+	}
+	.w-xl-75 {
+		width: 75% !important;
+	}
+	.w-xl-90 {
+		width: 90% !important;
+	}
+	.w-xl-100 {
+		width: 100% !important;
+	}
+	.w-xl-auto {
+		width: auto !important;
+	}
+	.h-xl-25 {
+		height: 25% !important;
+	}
+	.h-xl-50 {
+		height: 50% !important;
+	}
+	.h-xl-75 {
+		height: 75% !important;
+	}
+	.h-xl-90 {
+		height: 90% !important;
+	}
+	.h-xl-100 {
+		height: 100% !important;
+	}
+	.h-xl-auto {
+		height: auto !important;
+	}
+}
+
+.woocommerce-pagination .page-numbers li a, .woocommerce-pagination .page-numbers li span {
+	color: #fff;
+	background-color: #1D8CBE;
+	width: 1.9375em;
+	height: 1.9375em;
+	text-align: center;
+	line-height: 28px;
+	display: block;
+	border-radius: 100%;
+}
+
 /**
  * Shop tables
  */
@@ -73,14 +294,44 @@ ul.products li.product {
 	list-style: none;
 	position: relative;
 	margin-bottom: 2em;
+	background-color: #F8F8F8;
+	text-align: center;
+}
+
+ul.products li.product a {
+	color: inherit;
+}
+
+ul.products li.product .woocommerce-loop-product__title {
+	margin-top: 15px;
+	font-size: 1.25em;
+	font-weight: bold;
 }
 
 ul.products li.product img {
 	display: block;
 }
 
+ul.products li.product .onsale {
+	position: absolute;
+	background: #1DBF8D;
+	padding: 2px 10px;
+	border-radius: 100px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #fff;
+	right: 10px;
+	top: 10px;
+}
+
 ul.products li.product .button {
+	margin-top: 10px;
 	display: block;
+	color: #fff;
+	padding: 5px 0;
+	font-weight: bold;
+	font-size: 0.875em;
+	text-transform: uppercase;
 }
 
 @media screen and (min-width: 48em) {
@@ -114,6 +365,26 @@ ul.products li.product .button {
 	ul.products.columns-6 li.product {
 		width: 13.49333%;
 	}
+}
+
+.woocommerce-pagination {
+	clear: both;
+}
+
+.woocommerce-pagination .page-numbers {
+	list-style: none;
+	padding-left: 0;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.woocommerce-pagination .page-numbers li {
+	display: inline-block;
+	padding: 0 2px;
+}
+
+.woocommerce-pagination .page-numbers li span {
+	background-color: #b9b9b9;
 }
 
 /**

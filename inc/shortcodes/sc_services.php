@@ -15,13 +15,21 @@ function sobercheck_services_item( $atts, $content = null ) {
         'style' => '01',
         'info' => '',
         'link' => '#',
-        'color' => ''
+        'color' => '',
+        'shadow' => 1
     ), $atts ) );
 
     $id = 'sc-service-item-' . rand();
 
     ob_start();
     ?>
+    <?php if ( ! empty( $shadow ) && $shadow === 1 ) { ?>
+        <style>
+            #<?php echo $id; ?>.sc-services-item {
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+            }
+        </style>
+    <?php } ?>
     <?php if ( ! empty( $color ) ) : ?>
     <style>
         #<?php echo $id; ?>.style-02:hover::before {

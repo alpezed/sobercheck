@@ -96,14 +96,32 @@
 
 	.nav-links {
 		display: flex;
+		padding-left: 0;
+		list-style: none;
+	}
+
+	&__next,
+	&__prev {
+		@extend %pagination-item;
+	}
+
+	&__prev {
+		margin-left: auto;
+	}
+
+	.nav-previous,
+	.nav-next {
+		padding: 0 size(7);
 	}
 
 	.nav-previous {
 		flex: 1 0 50%;
+		max-width: 50%;
 	}
 
 	.nav-next {
 		text-align: end;
 		flex: 1 0 50%;
+		max-width: 50%;
 	}
 }

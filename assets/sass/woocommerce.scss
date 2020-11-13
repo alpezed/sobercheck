@@ -9,6 +9,9 @@ $woocommerce__color-error: #e2401c;
 $woocommerce__color-success: #0f834d;
 $woocommerce__color-info: #3d9cd2;
 
+@import "abstracts/variables/colors";
+@import "abstracts/variables/bootstrap";
+
 /* Bootstrap
 --------------------------------------------- */
 @import "../../node_modules/bootstrap/scss/functions";
@@ -47,3 +50,8 @@ $woocommerce__color-info: #3d9cd2;
  * WooCommerce widgets
  */
 @import "plugins/woocommerce/widgets";
+
+/**
+ * Buttons widgets
+ */
+@import "plugins/woocommerce/buttons";

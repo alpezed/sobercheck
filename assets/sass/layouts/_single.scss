@@ -8,6 +8,7 @@
     }
 
     .post-thumbnail {
+        @extend %full-width-sm;
         margin-top: 27px;
     }
 }

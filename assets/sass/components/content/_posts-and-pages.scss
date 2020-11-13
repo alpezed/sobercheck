@@ -4,6 +4,11 @@
 
 #primary {
 	padding: 124px 0 100px 0;
+
+	@include media-breakpoint-down(xs) {
+		padding-top: 52px !important;
+		padding-bottom: 52px !important;
+	}
 }
 
 .updated:not(.published) {
@@ -22,6 +27,7 @@
 
 .entry-title,
 .page-title {
+	@extend %title-sm;
 	font-size: 30px;
 }
 
@@ -69,6 +75,15 @@
 	padding-left: 15px;
 	font-weight: bold;
 
+	@include media-breakpoint-down(xs) {
+		padding-left: 0;
+		margin-top: 0;
+
+		.author {
+			display: block;
+		}
+	}
+
 	a {
 		color: $black;
 	}
@@ -91,15 +106,15 @@
 }
 
 .page-section {
+	&-title {
+		@extend %title-sm;
+	}
+	
 	&-sub-title {
 		color: $black;
 	}
 
 	@include media-breakpoint-down(xs) {
-		&-title {
-			font-size: 20px !important;
-		}
-
 		&-sub-title {
 			font-size: 16px !important;
 			line-height: 25px;

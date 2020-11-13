@@ -16,7 +16,7 @@
             <?php do_action( 'sc_back_button' ); ?>
         </header><!-- .entry-header -->
 
-        <div class="row align-items-center">
+        <div class="row flex-sm-row flex-column-reverse align-items-center">
             <div class="col-md-8">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php sobercheck_post_thumbnail(); ?>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="entry-meta">
+                <div class="entry-meta flex-row justify-content-between flex-row-reverse d-flex d-sm-block">
                     <?php
                     sobercheck_posted_on();
                     sobercheck_posted_by();

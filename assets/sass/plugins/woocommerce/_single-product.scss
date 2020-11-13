@@ -1,32 +1,121 @@
 .single-product {
 
+	#primary {
+		@include media-breakpoint-down(xs) {
+			padding-top: 0;
+		}
+	}
+
 	div.product {
 		position: relative;
 
+		.woocommerce-product-gallery-wrapper {
+			@include media-breakpoint-down(xs) {
+				form:not(.variations_form).cart, .woocommerce-variation-add-to-cart {
+					display: none;
+				}
+			}
+		}
+
+		.summary {
+			.product_title {
+				@extend %title-sm;
+				margin-top: 0;
+				margin-bottom: 35px;
+				color: $color_accent-gray;
+
+				@include media-breakpoint-down(sm) {
+					margin-top: 42px;
+				}
+			}
+	
+			.price {
+				font-size: 30px;
+				color: $color_accent-gray;
+			}
+
+			form:not(.variations_form).cart, 
+			.woocommerce-variation-add-to-cart { 
+				@include media-breakpoint-up(sm) {
+					display: none;
+				}
+			}
+
+			.woocommerce-product-details__short-description {
+				p:last-child {
+					@include media-breakpoint-up(sm) {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		table.variations .value {
+			margin-bottom: 1rem;
+		}
+
+		form:not(.variations_form).cart, .woocommerce-variation-add-to-cart {
+			clear: both;
+			display: flex;
+			flex-direction: row-reverse;
+
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+			}
+		}
+
+		form {
+			&.variations_form, .variations {
+				margin-bottom: 0;
+			}
+
+			.variations {
+				tr {
+					margin-bottom: 10px;
+				}
+			}
+
+			&.cart {
+				margin-top: 42px;
+			}
+		}
+
+		.quantity .qty {
+			width: 3.631em;
+			text-align: center;
+			padding: 8px;
+			margin-left: 10px;
+			border-radius: $btn-border-radius;
+		}
+
 		.woocommerce-product-gallery {
 			position: relative;
-			float: left;
+			// float: left;
 
-			.woocommerce-product-gallery__trigger {
+			&__trigger {
 				position: absolute;
 				top: 2em;
 				right: 1em;
 				display: block;
 				z-index: 99;
+				display: none;
 			}
 
 			.flex-viewport {
+				@extend %full-width;
+				margin-top: 0;
 				margin-bottom: 1em;
 			}
 
 			.flex-control-thumbs {
 				margin: 0;
 				padding: 0;
+				display: flex;
 
 				li {
 					list-style: none;
 					cursor: pointer;
-					float: left;
+					// float: left;
 
 					img {
 						opacity: 0.5;
@@ -82,5 +171,15 @@
 
 	&.out-of-stock {
 		color: $woocommerce__color-error;
+	}
+}
+
+.related.products {
+	@extend %clearfix;
+	margin-top: 120px;
+
+	& > h2 {
+		@extend %title-sm;
+		margin-bottom: 22px;
 	}
 }

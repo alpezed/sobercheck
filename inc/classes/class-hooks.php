@@ -26,7 +26,7 @@ class Hooks {
 
     public function back_button() {
         if ( wp_get_referer() ) {
-            echo '<button class="btn btn-link px-0 py-0" onclick="javascript:history.back()">' . esc_html__( 'Back', 'sobercheck' ) . '</button>';
+            echo '<button class="btn btn-link px-0 py-0 d-none d-sm-block" onclick="javascript:history.back()">' . esc_html__( 'Back', 'sobercheck' ) . '</button>';
         }
     }
 

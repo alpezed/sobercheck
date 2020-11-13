@@ -58,6 +58,19 @@ $base-size: 16;
 		font-size: size(18) !important;
 		padding: 16px 53px !important;
 	}
+
+	%title-sm {
+		font-size: 20px !important;
+		line-height: 30px;
+		margin-top: 0;
+	}
+
+	%full-width-sm {
+		width: 100vw;
+		position: relative;
+		margin-left: -50vw;
+		left: 50%;
+	}
 }
 
 %pagination-item {
@@ -70,4 +83,68 @@ $base-size: 16;
 	line-height: 28px;
 	display: block;
 	border-radius: 100%;
+}
+
+%btn {
+	display: inline-block;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	color: $body-color;
+	text-align: center;
+	text-decoration: if($link-decoration == none, null, none);
+	white-space: $btn-white-space;
+	vertical-align: middle;
+	user-select: none;
+	background-color: transparent;
+	border: $btn-border-width solid transparent;
+	border-radius: 0;
+	text-transform: uppercase;
+	@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	@include transition($btn-transition);
+
+	@include hover() {
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	&:focus,
+	&.focus {
+		outline: 0;
+		box-shadow: $btn-focus-box-shadow;
+	}
+
+	// Disabled comes first so active can properly restyle
+	&.disabled,
+	&:disabled {
+		opacity: $btn-disabled-opacity;
+		@include box-shadow(none);
+	}
+
+	&:not(:disabled):not(.disabled) {
+		cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+
+		&:active,
+		&.active {
+			@include box-shadow($btn-active-box-shadow);
+
+			&:focus {
+			@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+			}
+		}
+	}
+}
+
+%clearfix {
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+%full-width {
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	left: 50%;
 }

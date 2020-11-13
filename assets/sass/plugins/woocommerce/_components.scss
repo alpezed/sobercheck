@@ -224,6 +224,7 @@ p.stars {
 .woocommerce-noreviews,
 p.no-comments {
 	background-color: $woocommerce__color-success;
+	color: $white;
 	clear: both;
 }
 
@@ -235,6 +236,8 @@ p.no-comments {
 
 .woocommerce-error {
 	background-color: $woocommerce__color-error;
+	list-style: none;
+	padding-left: 0;
 }
 
 .demo_store {
@@ -246,6 +249,13 @@ p.no-comments {
 	padding: 1em;
 	background-color: $woocommerce__color-info;
 	z-index: 9999;
+}
+
+.woocommerce-notices-wrapper {
+	.button {
+		color: $white !important;
+		background-color: transparent !important;
+	}
 }
 
 @media screen and (min-width: 48em) {

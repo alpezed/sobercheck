@@ -1,5 +1,9 @@
 .blog-header-title {
     margin-bottom: 77px;
+
+    @include media-breakpoint-down(xs) {
+        margin-bottom: 30px;
+    }
 }
 
 .sc-posts {
@@ -8,6 +12,10 @@
     grid-column-gap: 10px;
     grid-row-gap: 70px;
     padding-bottom: size(67);
+
+    @include media-breakpoint-down(xs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .posted-on {
         position: absolute;

@@ -1,26 +1,47 @@
 ul.products {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
 	li.product {
 		list-style: none;
 		position: relative;
 		margin-bottom: 2em;
-		background-color: $color_product_item_bg;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 
-		a {
+		&:hover {
+			.woocommerce-loop-product__link {
+				box-shadow: 0 20px 30px rgba($black, .16);
+			}
+		}
+
+		.woocommerce-loop-product__link {
+			@extend %transit;
 			color: inherit;
+			display: block;
+			padding-bottom: 10px;
+			background-color: $color_product_item_bg;
+			margin-bottom: 4px;
+			border-radius: 8px;
+			overflow: hidden;
+			flex-grow: 1;
 		}
 
 		.woocommerce-loop-product__title {
 			margin-top: 15px;
 			font-size: size(20);
 			font-weight: bold;
+			padding: 0 13px;
 		}
 
 		img {
 			display: block;
+			width: 100%;
 		}
 
 		.onsale {
@@ -36,7 +57,6 @@ ul.products {
 		}
 
 		.button {
-			margin-top: 10px;
 			display: block;
 			color: $white;
 			padding: 5px 0;
@@ -54,12 +74,6 @@ ul.products {
 		li.product {
 
 			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: both;
-			}
 
 			&.last {
 				margin-right: 0;

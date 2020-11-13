@@ -53,6 +53,28 @@ table.shop_table_responsive {
 	}
 }
 
+table.shop_attributes {
+	tr {
+		border-bottom: 1px solid $color_bg_secondary_nav;
+	}
+
+	.woocommerce-product-attributes-item__label {
+		font-weight: normal;
+	}
+
+	.woocommerce-product-attributes-item__value {
+		text-align: right;
+		font-weight: bold;
+		color: $black;
+	}
+
+	th, td {
+		padding: 1em 0;
+		text-align: left;
+		vertical-align: top;
+	}
+}
+
 @media screen and (min-width: 48em) {
 
 	table.shop_table_responsive {

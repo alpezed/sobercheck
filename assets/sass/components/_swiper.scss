@@ -1,0 +1,47 @@
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    @extend %transit;
+    margin: 0 3px;
+}
+
+.swiper-pagination-bullet-active {
+    transform: scale(1.4);
+    background: $primary;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px !important;
+}
+
+.swiper-button-next:after {
+    content: '\f105';
+}
+
+.swiper-button-prev:after {
+    content: '\f104';
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    @extend %pagination-item;
+    // background: $primary;
+    // border-radius: 100px;
+    // color: $white;
+
+    @include media-breakpoint-down(xs) {
+        // width: 25px;
+        // height: 25px;
+    }
+
+    &:before, 
+    &:before {
+        @extend %font-awesome-free;
+        font-size: inherit;
+    }
+    
+    &:after, 
+    &:after {
+        @extend %font-awesome-free;
+        font-size: inherit;
+    }
+}
+

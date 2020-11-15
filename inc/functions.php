@@ -181,3 +181,18 @@ function sobercheck_get_rgba_hex_color( $rgba ) {
 
 	return '#' . $color;
 }
+
+function do_style( $styles, $echo = false ) {
+	$style = array();
+	foreach ( $styles as $key => $value ) {
+		$style[] = "$key: $value";
+	}
+
+	$style = implode( ';', $style );
+
+	if ( $echo ) {
+		echo $style;
+	}
+
+	return $style;
+}

@@ -6,8 +6,12 @@
 		}
 	}
 
-	div.product {
+	.product {
 		position: relative;
+
+		.inc {
+			font-size: 16px;
+		}
 
 		.woocommerce-product-gallery-wrapper {
 			@include media-breakpoint-down(xs) {
@@ -102,7 +106,7 @@
 			}
 
 			.flex-viewport {
-				@extend %full-width;
+				@extend %full-width-sm;
 				margin-top: 0;
 				margin-bottom: 1em;
 			}

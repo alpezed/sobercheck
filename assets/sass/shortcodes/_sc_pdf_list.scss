@@ -11,16 +11,28 @@
     margin-bottom: 8px;
     margin-right: 3px;
 
+    @include media-breakpoint-down(xs) {
+        padding: 15px 15px;
+    }
+
     h4 {
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 0;
         letter-spacing: -0.4px;
+
+        @include media-breakpoint-down(xs) {
+            font-size: 15px;
+        }
     }
-    
+
     &__link {
         padding-left: 20px;
         font-size: 14px;
         text-decoration: underline;
+
+        @include media-breakpoint-down(xs) {
+            padding-left: 10px;
+        }
     }
 }

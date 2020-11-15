@@ -1,11 +1,14 @@
-ul.products {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+.products {
+	&:not(.swiper-wrapper) {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		// justify-content: space-between;
+		list-style: none;
+	}
 
-	li.product {
+	.product {
 		list-style: none;
 		position: relative;
 		margin-bottom: 2em;
@@ -13,6 +16,10 @@ ul.products {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+
+		&:before {
+			content: none;
+		}
 
 		&:hover {
 			.woocommerce-loop-product__link {
@@ -57,6 +64,7 @@ ul.products {
 		}
 
 		.button {
+			@extend %btn-mobile;
 			display: block;
 			color: $white;
 			padding: 5px 0;
@@ -69,11 +77,12 @@ ul.products {
 
 @media screen and (min-width: 48em) {
 
-	ul.products {
+	.products {
 
-		li.product {
+		.product {
 
 			@include column-width(3);
+			margin-right: $columns__margin;
 
 			&.last {
 				margin-right: 0;
@@ -81,7 +90,7 @@ ul.products {
 		}
 	}
 
-	ul.products.columns-1 {
+	.products.columns-1 {
 
 		li.product {
 			float: none;
@@ -92,9 +101,9 @@ ul.products {
 
 	@for $i from 2 through 6 {
 
-		ul.products.columns-#{$i} {
+		.products.columns-#{$i} {
 
-			li.product {
+			.product {
 
 				@include column-width( $i );
 			}

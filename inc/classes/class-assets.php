@@ -20,16 +20,18 @@ class Assets {
     }
 
     public function enqueue_scripts() {
-        wp_enqueue_style( 'sobercheck-style', get_stylesheet_uri(), array(), SOBER_CHECK_VERSION );
         wp_enqueue_style( 'fontawesome', SOBER_CHECK_ASSETS_URI . '/fonts/fontawesome/css/all.min.css', array(), SOBER_CHECK_VERSION );
         wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap', false );
+        wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css', false );
+        wp_enqueue_style( 'sobercheck-style', get_stylesheet_uri(), array(), SOBER_CHECK_VERSION );
 
         wp_style_add_data( 'sobercheck-style', 'rtl', 'replace' );
 
         wp_enqueue_script( 'popper', SOBER_CHECK_ASSETS_URI . '/js/popper.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
         wp_enqueue_script( 'bootstrap', SOBER_CHECK_ASSETS_URI . '/js/bootstrap.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
+        // wp_enqueue_script( 'sobercheck-swiper', SOBER_CHECK_ASSETS_URI . '/js/bootstrap.min.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
 
-        wp_enqueue_script( 'sobercheck-bundle', SOBER_CHECK_ASSETS_URI . '/js/bundle.js', array(), SOBER_CHECK_VERSION, true );
+        wp_enqueue_script( 'sobercheck-bundle', SOBER_CHECK_ASSETS_URI . '/js/bundle.js', array( 'jquery' ), SOBER_CHECK_VERSION, true );
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );

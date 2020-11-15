@@ -148,3 +148,16 @@ $base-size: 16;
 	margin-left: -50vw;
 	left: 50%;
 }
+
+%font-awesome-free {
+	font-family: "Font Awesome 5 Free";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	font-weight: 900;
+	border: 0;
+	vertical-align: initial;
+}

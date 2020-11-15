@@ -82,6 +82,8 @@ class Woocommerce {
         } );
 
         add_filter( 'woocommerce_product_related_products_heading', array( $this, 'woocommerce_related_products_heading' ) );
+
+        add_filter( 'woocommerce_get_price_html', array( $this, 'custom_price_text' ) );
 		
 		/**
 		 * WooCommerce setup function.
@@ -110,6 +112,11 @@ class Woocommerce {
         
         // Enque woo scripts
         add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_scripts' ) );
+    }
+    
+    public function custom_price_text( $price ) {
+        $vat = __( 'inc.', 'sobercheck' );
+        return sprintf( __( '%1$s <span class="inc">%2$s</span>', 'sobercheck' ), $price, $vat );
     }
 
     public function woocommerce_related_products_heading() {

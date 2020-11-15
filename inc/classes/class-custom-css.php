@@ -32,9 +32,12 @@ class Custom_Css {
                     color: #ffffff;
                     background-color: {$theme_color};
                 }
-                .btn-primary, .btn-primary:hover, .btn-primary.hover, .site-header .navbar-nav:not(.nav-menu-right) .nav-link::before, .sc-quote blockquote::after, .title-bullet::before, .btn-primary:focus, .btn-primary.focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .comment-navigation__next, .comment-navigation__prev, .posts-navigation__next, .posts-navigation__prev, .post-navigation__next, .post-navigation__prev, ul.products li.product .button, .woocommerce-pagination .page-numbers li a, .btn-outline-primary:hover, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover {
+				.btn-primary, .btn-primary:hover, .btn-primary.hover, .site-header .navbar-nav:not(.nav-menu-right) .nav-link::before, .sc-quote blockquote::after, .title-bullet::before, .btn-primary:focus, .btn-primary.focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .comment-navigation__next, .comment-navigation__prev, .posts-navigation__next, .posts-navigation__prev, .post-navigation__next, .post-navigation__prev, .products .product .button, .woocommerce-pagination .page-numbers li a, .btn-outline-primary:hover, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, body .swiper-pagination-bullet-active, body .swiper-button-next, body .swiper-button-prev {
                     background-color: {$theme_color};
                     border-color: {$theme_color};
+				}
+				.wdo-tabs-container .nav-tabs > li.active > a, .wdo-tabs-container .nav-tabs > li.active > a:focus, .wdo-tabs-container .nav-tabs > li.active > a:hover, .wdo-tabs-container .nav > li > a:hover {
+                    background-color: {$theme_color} !important;
 				}
 				.btn-outline-primary {
 					color: {$theme_color};
@@ -71,7 +74,9 @@ class Custom_Css {
 
 		if ( ! empty( $content_padding_top ) || ( ! is_home() || ! is_archive() ) ) {
 			$custom_css .= "
-                .site-main { $content_padding }
+                @media only screen and (min-width: 480px) {
+					.site-main { $content_padding }
+				}
             ";
 		}
 
